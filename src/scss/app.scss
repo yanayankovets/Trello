@@ -1,0 +1,333 @@
+$pink: #FF9999;
+$purple: #CC99FF;
+$lavender: #9999FF;
+$light-blue: #BEFFFF;
+$light-blue-hover: #8ddde3;
+$light-orange: #FFCC99;
+$light-green: #CCFF99;
+$light-green-hover: #a2e594;
+$grass: #bafbba;
+$white: #FFF;
+$teknos-white: #fefefe;
+$light-gray: #CCCCCC;
+$gray: #787878;
+$charcoal: #404040;
+
+* {
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  color: $charcoal;
+}
+
+body {
+  background-image: radial-gradient(rgb(153, 153, 153) 10%, transparent 10%);
+  background-position: 10px 10px;
+  background-size: 18px 18px;
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  width: 1100px;
+  margin: 20px auto;
+  border: 1px solid $gray;
+  background-color: $white;
+}
+
+.header {
+  width: 1098px;
+  height: 95px;
+  background-color: $purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.clock {
+  background-color: $white;
+  border: 1px solid $gray;
+  font-size: 18px;
+  width: 80px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $white;
+  padding: 20px;
+}
+
+/*Columns*/
+
+.column {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $gray;
+  width: 340px;
+  position: relative;
+}
+
+.column__cell {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $teknos-white;
+  margin-bottom: 50px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.column__header, .add__card__btn, .delete__btn {
+  width: 338px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+  font-size: 16px;
+}
+
+.add__card__btn, .delete__btn {
+  position: absolute;
+  bottom: 0;
+}
+
+.add__card__btn:hover {
+  background-color: $light-blue-hover;
+  cursor: pointer;
+}
+
+.delete__btn:hover {
+  background-color: $light-green-hover;
+  cursor: pointer;
+}
+
+.column__header.todo, .add__card__btn {
+  background-color: $light-blue;
+}
+
+.column__header.progress {
+  background-color: $light-orange;
+}
+
+.column__header.done, .delete__btn {
+  background-color: $light-green;
+}
+
+/*Modal*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: $teknos-white;
+  margin: 115px auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 450px;
+  height: 350px;
+}
+
+.title__input,.edit__title {
+  width: 260px;
+  height: 35px;
+  margin-bottom: 15px;
+  border: 1px solid $gray;
+  outline: none;
+  padding-left: 10px;
+}
+
+.description__input, .edit__description {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+textarea {
+  outline: none;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.users__select {
+  margin-right: 55px;
+  outline: none;
+  padding: 0 10px;
+  width: 40%;
+  background-color: $lavender;
+}
+
+.users__select:hover {
+  cursor: pointer;
+}
+
+.close, .create__btn, .edit__btn {
+  width: 80px;
+  height: 40px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close {
+  background-color: pink;
+}
+
+.create__btn, .edit__btn {
+  background-color: $grass;
+}
+
+/*Card*/
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  min-height: 150px;
+  border: 1px solid $gray;
+  padding: 10px;
+  margin: 7px 0;
+}
+
+.card:hover {
+  cursor: grab;
+}
+.card:active {
+  cursor: grabbing;
+}
+
+.card__controls {
+  position: absolute;
+  right: 3%;
+}
+
+.card__title, .card__description, .edit__description {
+  word-break: break-word;
+  line-height: 22px;
+  text-align: justify-all;
+}
+
+.card__title {
+  width: 160px;
+  padding-top: 7px;
+  min-height: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card__description {
+  width: 300px;
+  min-height: 20px;
+  margin-bottom: 20px;
+  font-weight: 200;
+  font-size: 15px;
+}
+
+.card__info {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 94%;
+  bottom: 5px;
+  font-size: 14px;
+}
+
+.card__edit__btn, .card__delete__btn {
+  font-size: 14px;
+  height: 30px;
+  padding: 0 10px;
+  margin-left: 5px;
+}
+
+.card__edit__btn:hover, .card__delete__btn:hover, .edit__btn {
+  cursor: pointer;
+}
+
+.card__edit__btn {
+  border: 1px solid $gray;
+  background-color: #66CCFF;
+}
+
+.card__delete__btn {
+  border: 1px solid $gray;
+  background-color: $pink;
+}
+
+.close:hover, .close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.js-todo-cell .card {
+  background-color: $light-blue;
+}
+
+.js-in-progress-cell .card {
+  background-color:  $light-orange;
+}
+
+.js-done-cell .card {
+  background-color: $light-green;
+}
+
+/*Delete All*/
+
+.modal-content.delete {
+  background-color: $teknos-white;
+  margin: 115px auto;
+  padding: 30px;
+  border: 1px solid $gray;
+  width: 350px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.js-delete-all-btn {
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+  border: 1px solid $gray;
+  outline: none;
+  background-color: $pink;
+}
+
+.js-delete-all-btn:hover {
+  cursor: pointer;
+}
